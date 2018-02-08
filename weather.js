@@ -18,9 +18,11 @@ function update(err, response, body) {
 		console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
 		console.log(`Winds: ${weather.wind.speed} m/s`);
 		console.log(`Conditions: ${weather2P.main}`);
-		led.one(true)
+		led.one(true);
+		led.three(true);
 		setTimeout(function() {led.shutdown()}, 15000);
 	}
 }
+
 
 request(url, update);
