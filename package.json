@@ -1,0 +1,17 @@
+{
+  "name": "weather3",
+  "version": "1.0.0",
+  "description": "does weather stuff",
+  "main": "led.js",
+  "dependencies": {
+    "pigpio": "^0.6.4",
+    "request": "^2.83.0",
+    "rpio": "^0.9.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Connor Ahearn",
+  "license": "ISC"
+}
