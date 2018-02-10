@@ -6,7 +6,12 @@ let city = 'toronto';
 let units = 'metric'
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-function update(err, response, body) {
+module.exports = {
+	read: read, 
+	request: request
+}
+
+function read(err, response, body) {
   	if(err) console.log('error:', error);
   	else {
     		let weather = JSON.parse(body);
@@ -31,4 +36,4 @@ function lights() {
 	setTimeout(function() {led.shutdown()}, 15000);
 }
 
-request(url, update);
+request(url, body, read);

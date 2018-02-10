@@ -1,4 +1,4 @@
-var Gpio = require('pigpio').Gpio;
+const Gpio = require('pigpio').Gpio;
 
 led1 = new Gpio(4, {mode: Gpio.OUTPUT});
 led2 = new Gpio(17, {mode: Gpio.OUTPUT});
