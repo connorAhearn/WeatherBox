@@ -8,7 +8,7 @@ let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiK
 
 module.exports = {
 	read: read, 
-	request: request
+	start: start
 }
 
 function read(err, response, body) {
@@ -36,4 +36,7 @@ function lights() {
 	setTimeout(function() {led.shutdown()}, 15000);
 }
 
-request(url, body, read);
+function start() {
+	request(url, body, read);
+	setTimeout(function() {start()}, 50000);
+}

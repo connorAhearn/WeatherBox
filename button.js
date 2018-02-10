@@ -6,3 +6,9 @@ button = new Gpio(23, {
     pullUpDown: Gpio.PUD_DOWN,
     edge: Gpio.EITHER_EDGE
 });
+
+button.on('interrupt', function() {
+    weather.light();
+});
+
+weather.start();
