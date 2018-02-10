@@ -18,11 +18,17 @@ function update(err, response, body) {
 		console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
 		console.log(`Winds: ${weather.wind.speed} m/s`);
 		console.log(`Conditions: ${weather2P.main}`);
-		led.one(true);
-		led.three(true);
-		setTimeout(function() {led.shutdown()}, 15000);
+		
+		led.one = weather.main.temp_min > 0;
+		led.one = weather.main.temp_min <= 0 && weather.main.temp_min > (-5);
+		led.one = weather.main.temp_min <= (-5) && weather.main.temp_min > (-10);
+		led.one = weather.main.temp_min <= (-10) && weather.main.temp_min > (-15);
 	}
 }
 
+function lights() {
+	led.update();
+	setTimeout(function() {led.shutdown()}, 15000);
+}
 
 request(url, update);
