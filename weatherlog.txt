@@ -1,0 +1,4 @@
+Low in Toronto: -6 Celsius
+High in Toronto: -2 Celsius
+Winds: 11.3 m/s
+Condition: Clouds
