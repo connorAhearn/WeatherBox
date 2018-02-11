@@ -17,15 +17,11 @@ function update(err, response, body) {
     console.log('---------------');
 
     let weather = JSON.parse(body);
-    let weather2 = JSON.stringify(weather.weather);
-    weather2 = weather2.replace('[', '');
-    weather2 = weather2.replace(']', '');
-    weather2 = (weather2.includes("},{")) ? weather2.split("},{")[0] + "}" : weather2;	
-    weather2P = JSON.parse(weather2);
+
     console.log(`Low in ${weather.name}: ${weather.main.temp_min} Celsius`);
     console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
     console.log(`Winds: ${weather.wind.speed} m/s`);
-    console.log(`Conditions: ${weather2P.main}`);
+    for(let i = 0; i < weather.weather.length; i++) console.log(`Condition: ${weather.weather[i].main}`);
 
     if(loop < 10) {
       setTimeout(function(){request(url, update)}, 3000);

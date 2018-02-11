@@ -24,16 +24,13 @@ module.exports = {
 function read(err, response, body) {
   	if(err) console.log('error:', error);
   	else {
-    		let weather = JSON.parse(body);
-		let weather2 = JSON.stringify(weather.weather);
-    		weather2 = weather2.replace('[', '');
-    		weather2 = weather2.replace(']', '');
-		weather2 = (weather2.includes("},{")) ? weather2.split("},{")[0] + "}" : weather2;
-		weather2P = JSON.parse(weather2);
+		
+		let weather = JSON.parse(body);
+		    			
 		console.log(`Low in ${weather.name}: ${weather.main.temp_min} Celsius`);
-		console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
-		console.log(`Winds: ${weather.wind.speed} m/s`);
-		console.log(`Conditions: ${weather2P.main}`);
+    	console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
+    	console.log(`Winds: ${weather.wind.speed} m/s`);
+    	for(let i = 0; i < weather.weather.length; i++) console.log(`Condition: ${weather.weather[i].main}`);
 
 		let low = weather.main.temp_min;
 		
