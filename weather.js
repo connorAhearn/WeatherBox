@@ -11,6 +11,9 @@ var two;
 var three;
 var four;
 var five;
+var six;
+var seven;
+var eight;
 
 module.exports = {
 	read: read, 
@@ -31,12 +34,20 @@ function read(err, response, body) {
 		console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
 		console.log(`Winds: ${weather.wind.speed} m/s`);
 		console.log(`Conditions: ${weather2P.main}`);
+
+		let low = weather.main.temp_min;
 		
-		one = weather.main.temp_min > 0;
-		two = weather.main.temp_min <= 0 && weather.main.temp_min > (-5);
-		three = weather.main.temp_min <= (-5) && weather.main.temp_min > (-10);
-		four = weather.main.temp_min <= (-10) && weather.main.temp_min > (-15);
-		five = weather.main.temp_min <= (-15);
+		one = low > 0;
+		two = low <= 0 && low > (-5);
+		three = low <= (-5) && low > (-10);
+		four = low <= (-10) && low > (-15);
+		five = low <= (-15);
+
+		let wind = weather.wind.speed;
+
+		six = wind > 5;
+		seven = wind > 10;
+		eight = wind > 15;
 	}
 }
 
@@ -46,6 +57,9 @@ function lights() {
 	led.three(three);
 	led.four(four);
 	led.five(five);
+	led.six(six);
+	led.seven(seven);
+	led.eight(eight);
 	setTimeout(function() {led.shutdown()}, 15000);
 }
 

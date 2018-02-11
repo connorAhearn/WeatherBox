@@ -12,27 +12,20 @@ module.exports = {
 	three: setThree,
 	four: setFour,
 	five: setFive,
+	six: setSix,
+	seven: setSeven,
+	eight: setEight,
 	shutdown: function() {
 		setOne(false);
 		setTwo(false);
 		setThree(false);
 		setFour(false);
 		setFive(false);
-	},
-	update: function() {
-		setOne(one);
-		setTwo(two);
-		setThree(three);
-		setFour(four);
-		setFive(five);
+		setSix(false);
+		setSeven(false);
+		setEight(false);
 	}
 }
-
-var one = false;
-var two = false;
-var three = false;
-var four = false;
-var five = false;
 
 function setOne(on) {
 	led1.digitalWrite(on ? 1 : 0);
@@ -51,5 +44,17 @@ function setFour(on) {
 }
 
 function setFive(on) {
+	led5.digitalWrite(on ? 1 : 0);
+}
+
+function setSix(on) {
+	led5.digitalWrite(on ? 1 : 0);
+}
+
+function setSeven(on) {
+	led5.digitalWrite(on ? 1 : 0);
+}
+
+function setEight(on) {
 	led5.digitalWrite(on ? 1 : 0);
 }
