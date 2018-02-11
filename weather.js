@@ -6,6 +6,8 @@ let city = 'toronto';
 let units = 'metric'
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 var one;
 var two;
 var three;
@@ -26,10 +28,13 @@ function read(err, response, body) {
   	else {
 		
 		let weather = JSON.parse(body);
-		    			
-		console.log(`Low in ${weather.name}: ${weather.main.temp_min} Celsius`);
-    	console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
-    	console.log(`Winds: ${weather.wind.speed} m/s`);
+		let date = new Date();
+						
+		console.log('----------------------');
+		console.log(months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes());
+		//console.log(`Low in ${weather.name}: ${weather.main.temp_min} Celsius`);
+    	//console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);
+    	//console.log(`Winds: ${weather.wind.speed} m/s`);
     	for(let i = 0; i < weather.weather.length; i++) console.log(`Condition: ${weather.weather[i].main}`);
 
 		let low = weather.main.temp_min;
