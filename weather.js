@@ -43,7 +43,7 @@ function read(err, response, body) {
 		four = low <= (-10) && low > (-15);
 		five = low <= (-15);
 
-		let wind = weather.wind.speed;
+		let wind = weather.wind.speed * 2;
 
 		six = wind > 5;
 		seven = wind > 10;
