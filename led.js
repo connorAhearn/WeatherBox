@@ -5,9 +5,9 @@ led2 = new Gpio(17, {mode: Gpio.OUTPUT});
 led3 = new Gpio(18, {mode: Gpio.OUTPUT});
 led4 = new Gpio(27, {mode: Gpio.OUTPUT});
 led5 = new Gpio(22, {mode: Gpio.OUTPUT});
-led6 = new Gpio(22, {mode: Gpio.OUTPUT});
-led7 = new Gpio(22, {mode: Gpio.OUTPUT});
-led8 = new Gpio(22, {mode: Gpio.OUTPUT});
+led6 = new Gpio(24, {mode: Gpio.OUTPUT});
+led7 = new Gpio(25, {mode: Gpio.OUTPUT});
+led8 = new Gpio(5, {mode: Gpio.OUTPUT});
 
 module.exports = {
 	one: setOne,
