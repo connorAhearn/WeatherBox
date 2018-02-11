@@ -45,7 +45,7 @@ function read(err, response, body) {
 
 		let wind = weather.wind.speed * 2;
 
-		six = wind > 3;
+		six = wind > 5;
 		seven = wind > 10;
 		eight = wind > 15;
 	}
