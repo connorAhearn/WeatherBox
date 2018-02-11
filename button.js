@@ -8,7 +8,7 @@ button = new Gpio(23, {
 });
 
 button.on('interrupt', function() {
-    weather.light();
+    weather.lights();
 });
 
 weather.start();

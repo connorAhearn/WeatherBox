@@ -20,6 +20,7 @@ function update(err, response, body) {
     let weather2 = JSON.stringify(weather.weather);
     weather2 = weather2.replace('[', '');
     weather2 = weather2.replace(']', '');
+    weather2 = (weather2.includes("},{")) ? weather2.split("},{")[0] + "}" : weather2;	
     weather2P = JSON.parse(weather2);
     console.log(`Low in ${weather.name}: ${weather.main.temp_min} Celsius`);
     console.log(`High in ${weather.name}: ${weather.main.temp_max} Celsius`);

@@ -7,11 +7,11 @@ led4 = new Gpio(27, {mode: Gpio.OUTPUT});
 led5 = new Gpio(22, {mode: Gpio.OUTPUT});
 
 module.exports = {
-	one: one,
-	two: two,
-	three: three,
-	four: four,
-	five: five,
+	one: setOne,
+	two: setTwo,
+	three: setThree,
+	four: setFour,
+	five: setFive,
 	shutdown: function() {
 		setOne(false);
 		setTwo(false);
