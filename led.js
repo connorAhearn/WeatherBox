@@ -5,6 +5,9 @@ led2 = new Gpio(17, {mode: Gpio.OUTPUT});
 led3 = new Gpio(18, {mode: Gpio.OUTPUT});
 led4 = new Gpio(27, {mode: Gpio.OUTPUT});
 led5 = new Gpio(22, {mode: Gpio.OUTPUT});
+led6 = new Gpio(22, {mode: Gpio.OUTPUT});
+led7 = new Gpio(22, {mode: Gpio.OUTPUT});
+led8 = new Gpio(22, {mode: Gpio.OUTPUT});
 
 module.exports = {
 	one: setOne,
@@ -48,13 +51,13 @@ function setFive(on) {
 }
 
 function setSix(on) {
-	led5.digitalWrite(on ? 1 : 0);
+	led6.digitalWrite(on ? 1 : 0);
 }
 
 function setSeven(on) {
-	led5.digitalWrite(on ? 1 : 0);
+	led7.digitalWrite(on ? 1 : 0);
 }
 
 function setEight(on) {
-	led5.digitalWrite(on ? 1 : 0);
+	led8.digitalWrite(on ? 1 : 0);
 }
